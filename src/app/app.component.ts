@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from './user';
 import { HttpClient } from '@angular/common/http';
+import { UserService } from './service/user.service';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +9,11 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  users: User[] = [];
+  users$ = this.userService.users$;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private userService: UserService) {}
 
   ngOnInit() {
-    this.http.get<{ data: User[] }>('https://reqres.in/api/users').subscribe((res) => {
-      this.users = res.data;
-    })
+    this.userService.fetchUsers();
   }
 }
