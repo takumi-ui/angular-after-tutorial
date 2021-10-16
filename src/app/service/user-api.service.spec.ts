@@ -1,12 +1,13 @@
 import { TestBed } from '@angular/core/testing';
-import { UserListUseCase } from './user-list.usecase';
 
-describe('UserService', () => {
-  let service: UserListUseCase;
+import { UserApiService } from './user-api.service';
+
+describe('UserApiService', () => {
+  let service: UserApiService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(UserListUseCase);
+    service = TestBed.inject(UserApiService);
   });
 
   it('should be created', () => {

@@ -4,6 +4,7 @@ import { User } from '../user'
 import { StoreService } from '../state/store.service';
 import { map } from 'rxjs/operators';
 import { firstValueFrom, Observable } from 'rxjs';
+import { UserApiService } from './user-api.service';
 
 @Injectable({
   providedIn: 'root'
@@ -24,15 +25,11 @@ export class UserListUseCase {
     return this.store.select(state => state.userList.filter);
   }
 
-  constructor(private http: HttpClient, private store: StoreService) { }
+  constructor(private userApiService: UserApiService, private store: StoreService) { }
 
   async fetchUsers() {
 
-    const users = await firstValueFrom(
-      this.http
-      .get<{ data: User[] }>("https://reqres.in/api/users")
-      .pipe(map(res => res.data))
-    );
+    const users = await this.userApiService.getAllUsers();
 
     this.store.update(state => ({
       ...state,

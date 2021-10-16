@@ -9,13 +9,15 @@ import { UserListItemComponent } from './user/user-list-item/user-list-item.comp
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserListFilterComponent } from './user/user-list-filter/user-list-filter.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserDetailPageComponent } from './user/user-detail-page/user-detail-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserListItemComponent,
     UserListComponent,
-    UserListFilterComponent
+    UserListFilterComponent,
+    UserDetailPageComponent
   ],
   imports: [
     BrowserModule,
