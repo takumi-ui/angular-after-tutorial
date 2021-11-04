@@ -10,6 +10,8 @@ import { UserListComponent } from './user/user-list/user-list.component';
 import { UserListFilterComponent } from './user/user-list-filter/user-list-filter.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserDetailPageComponent } from './user/user-detail-page/user-detail-page.component';
+import { TemplateDirective } from './directive/template.directive';
+import { MaskPipe } from './pipe/mask.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { UserDetailPageComponent } from './user/user-detail-page/user-detail-pag
     UserListItemComponent,
     UserListComponent,
     UserListFilterComponent,
-    UserDetailPageComponent
+    UserDetailPageComponent,
+    TemplateDirective,
+    MaskPipe
   ],
   imports: [
     BrowserModule,

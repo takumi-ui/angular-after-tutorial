@@ -1,4 +1,4 @@
-<app-user-list-filter
+<!-- <app-user-list-filter
     *ngIf="userListFilter$ | async as userListFilter"
     [value]="userListFilter"
     (valueChange)="setUserListFilter($event)"
@@ -7,3 +7,18 @@
 <app-user-list *ngIf="users$ | async as users" [users]='users'></app-user-list>
 
 <router-outlet></router-outlet>
+
+<div appTemplate [greet]="'hello'" [name]="'Angular'">
+</div>
+<div>
+    {{ 'Angular' | mask: '⭐️' }}
+</div> -->
+<select multiple>
+	<option value="値Ａ">選択肢Ａ</option>
+	<option value="値Ｂ">選択肢Ｂ</option>
+	<option value="値Ｃ">選択肢Ｃ</option>
+</select>
+
+<div *ngFor="let value of array">
+    <div (mousedown)="mousedown($event)" (mouseover)="mouseover(value)">{{ value }}</div>
+</div>
